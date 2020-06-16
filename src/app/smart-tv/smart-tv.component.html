@@ -1,0 +1,49 @@
+<div class="w-full max-h-screen">
+  <div
+    class="border-gray-200 flex justify-between heigth_block"
+    *ngIf="top == true"
+  >
+    <div class="w-1/5 bg-gray-200" *ngIf="left == true">
+      <img
+        class="h-full w-full py-16 px-20"
+        src="../../assets/logo.png"
+        alt=""
+      />
+    </div>
+    <div class="w-full bg-orange-400"></div>
+    <div class="w-1/5 bg-gray-200" *ngIf="right == true">
+      <img
+        class="h-full w-full py-16 px-20"
+        src="../../assets/logo.png"
+        alt=""
+      />
+    </div>
+  </div>
+  <div
+    class="border-gray-200 flex justify-between heigth_block_central heigth_full"
+  >
+    <div class="w-1/5 bg-green-700" *ngIf="left == true"></div>
+    <div class="w-full bg-red-800"></div>
+    <div class="w-1/5 bg-green-700" *ngIf="right == true"></div>
+  </div>
+  <div
+    class="border-gray-200 flex justify-between heigth_block"
+    *ngIf="bottom == true"
+  >
+    <div class="w-1/5 bg-gray-200" *ngIf="left == true">
+      <img
+        class="w-full h-full py-16 px-20"
+        src="../../assets/logo.png"
+        alt=""
+      />
+    </div>
+    <div class="w-full bg-orange-400"></div>
+    <div class="w-1/5 bg-gray-200" *ngIf="right == true">
+      <img
+        class="w-full h-full py-16 px-20"
+        src="../../assets/logo.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

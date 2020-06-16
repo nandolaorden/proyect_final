@@ -1,0 +1,282 @@
+<form
+  ngNativeValidate
+  [formGroup]="form"
+  (ngSubmit)="setting()"
+  action="#"
+  method="POST"
+  class="flex flex-col pt-16 sm:pt-4 px-10 overflow-hidden bg-local min-h-screen"
+>
+  <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+      <div class="md:col-span-1">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Posición de las barras
+        </h3>
+        <p class="mt-1 text-lg leading-5 text-gray-500">
+          Ajuste de las barras de informacion en las posiciones,
+        </p>
+      </div>
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="last_name"
+              class="block text-base font-medium leading-5 text-gray-700"
+              >Barra información
+            </label>
+            <div class="mt-4 flex flex-row">
+              <div class="flex items-center">
+                <input
+                  id="push_everything"
+                  value="superior"
+                  type="radio"
+                  formControlName="information"
+                  class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+                <label for="push_everything" class="ml-3">
+                  <span
+                    class="block leading-5 text-base font-medium text-gray-700"
+                    >Superior
+                  </span>
+                </label>
+              </div>
+              <div class="flex items-center ml-6">
+                <input
+                  id="push_email"
+                  value="inferior"
+                  type="radio"
+                  formControlName="information"
+                  class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+                <label for="push_email" class="ml-3">
+                  <span
+                    class="block text-base leading-5 font-medium text-gray-700"
+                    >Inferior
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="last_name"
+              class="block text-base font-medium leading-5 text-gray-700"
+              >Barra Meteorología
+            </label>
+            <div class="mt-4 flex flex-row">
+              <div class="flex items-center">
+                <input
+                  id="meteorology1"
+                  value="izquierdo"
+                  type="radio"
+                  formControlName="meteorology"
+                  class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+                <label for="push_everything" class="ml-3">
+                  <span
+                    class="block text-base leading-5 font-medium text-gray-700"
+                    >Izquierdo
+                  </span>
+                </label>
+              </div>
+              <div class="flex items-center ml-6">
+                <input
+                  id="meteorology2"
+                  value="derecho"
+                  type="radio"
+                  formControlName="meteorology"
+                  class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+                <label for="push_email" class="ml-3">
+                  <span
+                    class="block text-base leading-5 font-medium text-gray-700"
+                    >Derecho
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+      <div class="md:col-span-1">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Información a mostrar
+        </h3>
+        <p class="mt-1 text-lg leading-5 text-gray-500">
+          Ajustar la información a mostrar.
+        </p>
+      </div>
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <div class="flex items-start mt-5">
+              <div class="absolute flex items-center h-5">
+                <input
+                  id="video"
+                  type="checkbox"
+                  formControlName="video"
+                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+              </div>
+              <div class="pl-8 text-base leading-5">
+                <label for="video" class="font-medium text-base text-gray-700"
+                  >Videos
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="url_server"
+              class="block font-medium text-base leading-5 text-gray-700"
+            >
+              Url Servidor
+            </label>
+            <input
+              id="url_server"
+              type="text"
+              formControlName="url_server"
+              class="mt-3 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-base sm:leading-5"
+              placeholder="www.example.com"
+            />
+          </div>
+          <div class="col-span-6 mt-8 border-t border-gray-400 pt-5"></div>
+          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <div class="flex items-start mt-5">
+              <div class="absolute flex items-center h-5">
+                <input
+                  id="alert"
+                  type="checkbox"
+                  formControlName="alert"
+                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+              </div>
+              <div class="pl-8 text-base leading-5">
+                <label for="alert" class="font-medium text-base text-gray-700"
+                  >Alertas
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-4">
+            <label
+              for="text"
+              class="block font-medium text-base leading-5 text-gray-700"
+            >
+              Introducir texto
+            </label>
+            <div class="rounded-md shadow-sm mt-3">
+              <textarea
+                id="text"
+                rows="3"
+                type="text"
+                formControlName="text_alert"
+                class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-base sm:leading-5"
+                placeholder="Introduce el texto"
+              ></textarea>
+            </div>
+          </div>
+          <div class="col-span-6 mt-8 border-t border-gray-400 pt-5"></div>
+          <div class="col-span-6">
+            <div class="flex items-start mt-5">
+              <div class="absolute flex items-center h-5">
+                <input
+                  id="news"
+                  type="checkbox"
+                  formControlName="news"
+                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+              </div>
+              <div class="pl-8 text-base leading-5">
+                <label for="news" class="font-medium text-base text-gray-700"
+                  >Noticias
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <div class="flex sm:justify-center mt-4 ml-5 sm:ml-0">
+              <div class="h-5">
+                <input
+                  id="font_rss"
+                  type="checkbox"
+                  formControlName="font_rss"
+                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+              </div>
+              <div class="pl-4 text-base leading-5">
+                <label
+                  for="font_rss"
+                  class="font-medium text-base text-gray-700"
+                  >Fuente RSS
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="url_font"
+              class="block font-medium text-base leading-5 text-gray-700"
+            >
+              Url fuente RSS
+            </label>
+            <input
+              id="url_font"
+              type="text"
+              formControlName="url_font"
+              class="mt-3 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-base sm:leading-5"
+              placeholder="www.example.com"
+            />
+          </div>
+          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <div class="flex sm:justify-center mt-4 ml-5 sm:ml-0">
+              <div class="h-5">
+                <input
+                  id="text_news"
+                  type="checkbox"
+                  formControlName="text_news"
+                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                />
+              </div>
+              <div class="pl-4 text-base leading-5">
+                <label
+                  for="text_news"
+                  class="font-medium text-base text-gray-700"
+                  >Texto noticias
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 sm:col-span-4">
+            <label
+              for="about"
+              class="block font-medium text-base leading-5 text-gray-700"
+            >
+              Introducir texto
+            </label>
+            <textarea
+              id="area_news"
+              rows="3"
+              type="text"
+              formControlName="area_news"
+              class="mt-3 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-base sm:leading-5"
+              placeholder="Introduce el texto"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-right mb-6 sm:mb-0">
+    <button
+      type="submit"
+      class="mt-6 py-3 px-4 w-30 text-center bg-orange-500 hover:bg-orange-400 text-white font-semibold hover:border-transparent rounded duration-150 ease-in-out"
+    >
+      Guardar
+    </button>
+  </div>
+</form>
