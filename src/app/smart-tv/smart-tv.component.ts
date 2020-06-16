@@ -30,18 +30,17 @@ export class SmartTVComponent implements OnInit {
   }
 
   intervalo() {
-    setTimeout(() => {
-      setInterval(console.log("hola"), 2000);
-    }, 1000);
+    setInterval(() => {
+      this.getSetting();
+    }, 30000);
   }
+
   // Metodo para obtener todos los productos
   getSetting() {
     this.settingService.getSetting().subscribe(
-      (setting) => {
-        if (!this.configuration) {
-          this.configuration = setting.setting;
-        }
-        console.log(this.configuration);
+      (setting: any) => {
+        this.configuration = setting.setting;
+
         if (
           this.configuration.position_information == "superior" &&
           this.configuration.position_meteorology == "izquierdo"

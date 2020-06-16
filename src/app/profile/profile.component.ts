@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   // Metodo para obtener todos los productos
   getUser() {
     this.userService.getUser().subscribe(
-      (user) => {
+      (user: any) => {
         this.user = user.user;
       },
       (error) => {
