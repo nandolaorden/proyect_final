@@ -12,9 +12,19 @@ export class SettingComponent implements OnInit {
   constructor(private settingService: SettingService) {}
 
   form: FormGroup;
+  videos: boolean = false;
 
   ngOnInit() {
     this.initForm();
+  }
+
+  checkValue(event: any, element: string) {
+    const videos = this.form.get(element);
+    if (!event.srcElement.checked) {
+      videos.disable();
+    } else {
+      videos.enable();
+    }
   }
 
   initForm() {
@@ -24,12 +34,18 @@ export class SettingComponent implements OnInit {
       video: new FormControl(false, [Validators.required]),
       alert: new FormControl(false, [Validators.required]),
       news: new FormControl(false, [Validators.required]),
-      url_server: new FormControl(null, [Validators.required]),
-      text_alert: new FormControl(null, [Validators.required]),
-      area_news: new FormControl(null, [Validators.required]),
-      url_font: new FormControl(null, [Validators.required]),
-      font_rss: new FormControl(false, [Validators.required]),
-      text_news: new FormControl(null, [Validators.required]),
+      url_server: new FormControl({ value: null, disabled: true }, [
+        Validators.required,
+      ]),
+      url_font: new FormControl({ value: null, disabled: true }, [
+        Validators.required,
+      ]),
+      area_news: new FormControl({ value: null, disabled: true }, [
+        Validators.required,
+      ]),
+      text_alert: new FormControl({ value: null, disabled: true }, [
+        Validators.required,
+      ]),
     });
   }
 
@@ -38,7 +54,7 @@ export class SettingComponent implements OnInit {
       (data: any) => {
         Swal.fire({
           icon: "success",
-          title: "Se ha guardado perfectamente.",
+          title: "Se ha guardado correctamente.",
         });
       },
       (error) => {

@@ -1,17 +1,23 @@
-<div class="w-full max-h-screen">
+<div class="w-full max-h-screen overflow-hidden">
   <div
-    class="border-gray-200 flex justify-between heigth_block"
+    class="border-gray-200 flex justify-between height_block"
     *ngIf="top == true"
   >
-    <div class="w-1/5 bg-gray-200" *ngIf="left == true">
+    <div class="w-1/5 bg-gray-200 z-50" *ngIf="left == true">
       <img
         class="h-full w-full py-16 px-20"
         src="../../assets/logo.png"
         alt=""
       />
     </div>
-    <div class="w-full bg-orange-400"></div>
-    <div class="w-1/5 bg-gray-200" *ngIf="right == true">
+    <div class="w-full bg-gray-300">
+      <div
+        class="w-3/5 mt-10 flex justify-center items-center px-5 animation_information text-teal-500 text-xl font-bold"
+      >
+        <p>{{ text_new }}</p>
+      </div>
+    </div>
+    <div class="w-1/5 bg-gray-200 z-50" *ngIf="right == true">
       <img
         class="h-full w-full py-16 px-20"
         src="../../assets/logo.png"
@@ -20,25 +26,31 @@
     </div>
   </div>
   <div
-    class="border-gray-200 flex justify-between heigth_block_central heigth_full"
+    class="border-gray-200 flex justify-between height_block_central heigth_full"
   >
     <div class="w-1/5 bg-green-700" *ngIf="left == true"></div>
     <div class="w-full bg-red-800"></div>
     <div class="w-1/5 bg-green-700" *ngIf="right == true"></div>
   </div>
   <div
-    class="border-gray-200 flex justify-between heigth_block"
+    class="border-gray-200 flex justify-between height_block"
     *ngIf="bottom == true"
   >
-    <div class="w-1/5 bg-gray-200" *ngIf="left == true">
+    <div class="w-1/5 bg-gray-200 z-50" *ngIf="left == true">
       <img
         class="w-full h-full py-16 px-20"
         src="../../assets/logo.png"
         alt=""
       />
     </div>
-    <div class="w-full bg-orange-400"></div>
-    <div class="w-1/5 bg-gray-200" *ngIf="right == true">
+    <div class="w-full bg-gray-300">
+      <div
+        class="w-3/5 mt-10 flex justify-center items-center px-5 animation_information text-teal-500 text-xl font-bold"
+      >
+        <p>{{ text_new }}</p>
+      </div>
+    </div>
+    <div class="w-1/5 bg-gray-200 z-50" *ngIf="right == true">
       <img
         class="w-full h-full py-16 px-20"
         src="../../assets/logo.png"

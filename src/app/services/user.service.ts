@@ -20,6 +20,13 @@ export class UserService {
     return this.http.get(url);
   }
 
+  // Metodo API REST para cambiar contraseña
+  changePassword(user) {
+    const idUser = localStorage.getItem("id");
+    const url = "http://localhost:3000/user/" + idUser;
+    return this.http.put(url, user);
+  }
+
   // Para crear el token en localStorage
   estaLogueado(): boolean {
     const token = localStorage.getItem("token");

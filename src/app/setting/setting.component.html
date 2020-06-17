@@ -119,6 +119,7 @@
                   id="video"
                   type="checkbox"
                   formControlName="video"
+                  (change)="checkValue($event, 'url_server')"
                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
                 />
               </div>
@@ -152,6 +153,7 @@
                   id="alert"
                   type="checkbox"
                   formControlName="alert"
+                  (change)="checkValue($event, 'text_alert')"
                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
                 />
               </div>
@@ -181,13 +183,15 @@
             </div>
           </div>
           <div class="col-span-6 mt-8 border-t border-gray-400 pt-5"></div>
-          <div class="col-span-6">
+          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
             <div class="flex items-start mt-5">
               <div class="absolute flex items-center h-5">
                 <input
                   id="news"
                   type="checkbox"
                   formControlName="news"
+                  (change)="checkValue($event, 'url_font')"
+                  (change)="checkValue($event, 'area_news')"
                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
                 />
               </div>
@@ -198,25 +202,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <div class="flex sm:justify-center mt-4 ml-5 sm:ml-0">
-              <div class="h-5">
-                <input
-                  id="font_rss"
-                  type="checkbox"
-                  formControlName="font_rss"
-                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                />
-              </div>
-              <div class="pl-4 text-base leading-5">
-                <label
-                  for="font_rss"
-                  class="font-medium text-base text-gray-700"
-                  >Fuente RSS
-                </label>
-              </div>
-            </div>
-          </div>
+
           <div class="col-span-6 sm:col-span-3">
             <label
               for="url_font"
@@ -232,26 +218,8 @@
               placeholder="www.example.com"
             />
           </div>
-          <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <div class="flex sm:justify-center mt-4 ml-5 sm:ml-0">
-              <div class="h-5">
-                <input
-                  id="text_news"
-                  type="checkbox"
-                  formControlName="text_news"
-                  class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                />
-              </div>
-              <div class="pl-4 text-base leading-5">
-                <label
-                  for="text_news"
-                  class="font-medium text-base text-gray-700"
-                  >Texto noticias
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-6 sm:col-span-4">
+
+          <div class="col-span-6">
             <label
               for="about"
               class="block font-medium text-base leading-5 text-gray-700"

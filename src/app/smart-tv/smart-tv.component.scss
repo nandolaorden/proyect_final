@@ -1,7 +1,31 @@
-.heigth_block {
+.height_block {
   min-height: 20vh;
   max-height: 20vh;
 }
-.heigth_block_central {
+
+.height_block_central {
   min-height: 80vh;
+}
+
+.animation_information {
+  position: relative;
+  min-height: 10vh;
+  animation-duration: 30s;
+  animation-name: information;
+  animation-iteration-count: infinite;
+}
+
+@keyframes information {
+  0% {
+    margin-left: 140%;
+  }
+  20% {
+    margin-left: 20%;
+  }
+  80% {
+    margin-left: 20%;
+  }
+  100% {
+    margin-left: -100%;
+  }
 }

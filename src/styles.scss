@@ -4,3 +4,14 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.swal-height {
+  min-height: 70vh !important;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.content-class {
+  font-size: 2rem;
+}
