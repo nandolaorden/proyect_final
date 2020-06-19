@@ -55,7 +55,6 @@ export class SmartTVComponent implements OnInit {
     this.settingService.getSetting().subscribe(
       (setting: any) => {
         this.configuration = setting.setting;
-
         // Configuration position
         if (
           this.configuration.position_information == "superior" &&
@@ -138,5 +137,11 @@ export class SmartTVComponent implements OnInit {
       },
       (error) => {}
     );
+  }
+
+  getClima() {
+    this.climaService.getClima().subscribe((data) => {
+      this.climas = data;
+    });
   }
 }
