@@ -13,6 +13,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SmartTVComponent } from './smart-tv/smart-tv.component';
 import { ClimaComponent } from './smart-tv/clima/clima.component';
+import { FechaClimaPipe } from './pipes/fecha-clima.pipe';
+import { DiaClimaPipe } from './pipes/dia-clima.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ClimaComponent } from './smart-tv/clima/clima.component';
     ProfileComponent,
     SmartTVComponent,
     ClimaComponent,
+    FechaClimaPipe,
+    DiaClimaPipe,
   ],
   imports: [
     BrowserModule,
