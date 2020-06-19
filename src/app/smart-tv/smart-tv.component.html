@@ -28,9 +28,17 @@
   <div
     class="border-gray-200 flex justify-between height_block_central heigth_full"
   >
-    <div class="w-1/5 bg-green-700" *ngIf="left == true"></div>
+    <div class="w-1/5 bg-green-700" *ngIf="left == true">
+      <div *ngFor="let clima of climas.prediccion.dia">
+        <app-clima [dia]="clima"></app-clima>
+      </div>
+    </div>
     <div class="w-full bg-red-800"></div>
-    <div class="w-1/5 bg-green-700" *ngIf="right == true"></div>
+    <div class="w-1/5 bg-green-700" *ngIf="right == true">
+      <div *ngFor="let clima of climas.prediccion.dia">
+        <app-clima [dia]="clima"></app-clima>
+      </div>
+    </div>
   </div>
   <div
     class="border-gray-200 flex justify-between height_block"

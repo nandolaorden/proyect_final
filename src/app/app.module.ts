@@ -12,6 +12,7 @@ import { LoginGuard } from "./guards/login.guard";
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SmartTVComponent } from './smart-tv/smart-tv.component';
+import { ClimaComponent } from './smart-tv/clima/clima.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SmartTVComponent } from './smart-tv/smart-tv.component';
     CalendarComponent,
     ProfileComponent,
     SmartTVComponent,
+    ClimaComponent,
   ],
   imports: [
     BrowserModule,
