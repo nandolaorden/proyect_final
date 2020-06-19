@@ -9,10 +9,12 @@ import { LoginComponent } from "./login/login.component";
 import { SettingComponent } from "./setting/setting.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { LoginGuard } from "./guards/login.guard";
-import { CalendarComponent } from './calendar/calendar.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SmartTVComponent } from './smart-tv/smart-tv.component';
-import { ClimaComponent } from './smart-tv/clima/clima.component';
+import { CalendarComponent } from "./calendar/calendar.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { SmartTVComponent } from "./smart-tv/smart-tv.component";
+import { ClimaComponent } from "./smart-tv/clima/clima.component";
+import { DatePipe } from './pipes/date.pipe';
+import { DayPipe } from './pipes/day.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ClimaComponent } from './smart-tv/clima/clima.component';
     ProfileComponent,
     SmartTVComponent,
     ClimaComponent,
+    DatePipe,
+    DayPipe,
   ],
   imports: [
     BrowserModule,

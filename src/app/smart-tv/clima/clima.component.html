@@ -1,8 +1,8 @@
 <div
   class="flex justify-between bg-gray-400 mx-4 rounded text-teal-500 font-bold"
 >
-  <div class="w-1/2">
-    <h1 class="text-2xl pl-5">{{ date }}</h1>
+  <div class="w-full">
+    <h1 class="text-xl pl-5">{{ date | date }} {{ date | day }}</h1>
     <div class="flex-row">
       <div class="text-center">
         <label>Temperatura</label>
@@ -15,6 +15,6 @@
     </div>
   </div>
   <div class="w-1/2 flex justify-center items-center">
-    <img class="h-10 w-10" src="../../assets/climas/soleado.png" alt="" />
+    <img class="w-full h-full p-4" [src]="img" alt="imgTiempo" />
   </div>
 </div>
