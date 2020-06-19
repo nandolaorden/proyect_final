@@ -8,6 +8,8 @@ import {
 import { SettingService } from "../services/setting.service";
 import Swal from "sweetalert2";
 import { IfStmt } from "@angular/compiler";
+import { ClimaService } from "../services/clima.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-smart-tv",
@@ -23,14 +25,17 @@ export class SmartTVComponent implements OnInit {
   right = false;
   top = false;
   bottom = false;
+  climas: any = { prediccion: { dia: [] } };
 
-  constructor(private settingService: SettingService) {}
+  constructor(
+    private settingService: SettingService,
+    private climaService: ClimaService
+  ) {}
 
   ngOnInit() {
     this.getSetting();
     this.intervalo();
-
-    //setInterval("this.getSetting", 5000);
+    this.getClima();
   }
 
   intervalo() {
@@ -44,8 +49,6 @@ export class SmartTVComponent implements OnInit {
     this.settingService.getSetting().subscribe(
       (setting: any) => {
         this.configuration = setting.setting;
-        console.log(this.configuration);
-
         // Configuration position
         if (
           this.configuration.position_information == "superior" &&
@@ -128,5 +131,11 @@ export class SmartTVComponent implements OnInit {
       },
       (error) => {}
     );
+  }
+
+  getClima() {
+    this.climaService.getClima().subscribe((data) => {
+      this.climas = data;
+    });
   }
 }
