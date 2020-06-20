@@ -22,12 +22,12 @@ export class SmartTVComponent implements OnInit {
   configuration: any;
   text_new: any;
   alert_text: any;
-  url_video = "C:/Users/Nando/Desktop/1.mp4";
   left = false;
   right = false;
   top = false;
   bottom = false;
   climas: any = { prediccion: { dia: [] } };
+  block_main = false;
 
   constructor(
     private settingService: SettingService,
@@ -101,11 +101,10 @@ export class SmartTVComponent implements OnInit {
           this.right = true;
         }
 
-        /*   if (this.configuration.main_block_video == true) {
-          if (this.configuration.url_server) {
-            this.url_video = this.configuration.url_server + "/2.mp4";
-          }
-        } */
+        if (this.configuration.main_block_video == true) {
+        } else {
+          this.block_main = true;
+        }
         // Datos
         if (this.configuration.main_block_news == true) {
           if (this.configuration.banner_text) {

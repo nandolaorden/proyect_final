@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
       }
 
       return {
-        sonIguales: true,
+        comparePassword: true,
       };
     };
   }

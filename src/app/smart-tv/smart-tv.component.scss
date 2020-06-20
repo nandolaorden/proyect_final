@@ -15,6 +15,38 @@
   animation-iteration-count: infinite;
 }
 
+.animation_logo {
+  position: relative;
+  left: 10%;
+  top: 10%;
+  animation-duration: 15s;
+  animation-name: logo;
+  animation-iteration-count: infinite;
+}
+
+@keyframes logo {
+  0% {
+    left: 10%;
+    top: 10%;
+  }
+  25% {
+    left: 80%;
+    top: 10%;
+  }
+  50% {
+    left: 80%;
+    top: 80%;
+  }
+  75% {
+    left: 10%;
+    top: 80%;
+  }
+  100% {
+    left: 10%;
+    top: 10%;
+  }
+}
+
 @keyframes information {
   0% {
     margin-left: 140%;

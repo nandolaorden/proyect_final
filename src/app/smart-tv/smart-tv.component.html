@@ -33,17 +33,18 @@
         <app-clima [dia]="clima"></app-clima>
       </div>
     </div>
-    <div class="w-full min-h-full bg-red-800">
-      <iframe
-        class="w-full h-full"
-        [src]="cleanURL(url_video)"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-      <!-- <video muted autoplay loop controls class="w-full h-full">
-        <source [src]="cleanURL(url_video)" type="video/mp4" />
-        Browser not supported
-      </video> -->
+    <div class="w-full min-h-full bg-white">
+      <div class="h-full" *ngIf="block_main == false">
+        <video autoplay loop controls muted>
+          <source
+            src="http://localhost:3000/video/video2.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="animation_logo" *ngIf="block_main == true">
+        <img class="w-64" src="../../assets/logo.png" alt="" />
+      </div>
     </div>
     <div class="w-1/5 bg-gray-300" *ngIf="right == true">
       <div *ngFor="let clima of climas.prediccion.dia" class="mt-3">

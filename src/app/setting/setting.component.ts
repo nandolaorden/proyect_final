@@ -82,7 +82,6 @@ export class SettingComponent implements OnInit {
   }
 
   setting() {
-    console.log(this.form.value);
     this.settingService.editSetting(this.form.value).subscribe(
       (data: any) => {
         Swal.fire({
