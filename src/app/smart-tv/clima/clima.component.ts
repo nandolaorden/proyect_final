@@ -56,7 +56,5 @@ export class ClimaComponent implements OnInit {
     ) {
       this.img = "../../assets/climas/nublado-lluvieso.png";
     }
-
-    console.log(this.dia.estado_cielo);
   }
 }

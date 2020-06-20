@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { IfStmt } from "@angular/compiler";
 import { ClimaService } from "../services/clima.service";
 import { Observable } from "rxjs";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Component({
   selector: "app-smart-tv",
@@ -21,6 +22,7 @@ export class SmartTVComponent implements OnInit {
   configuration: any;
   text_new: any;
   alert_text: any;
+  url_video = "C:/Users/Nando/Desktop/1.mp4";
   left = false;
   right = false;
   top = false;
@@ -29,7 +31,8 @@ export class SmartTVComponent implements OnInit {
 
   constructor(
     private settingService: SettingService,
-    private climaService: ClimaService
+    private climaService: ClimaService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -48,6 +51,10 @@ export class SmartTVComponent implements OnInit {
     this.climaService.getClima().subscribe((data) => {
       this.climas = data;
     });
+  }
+
+  cleanURL(oldURL: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(oldURL);
   }
 
   // Metodo para obtener todos los productos
@@ -94,6 +101,11 @@ export class SmartTVComponent implements OnInit {
           this.right = true;
         }
 
+        /*   if (this.configuration.main_block_video == true) {
+          if (this.configuration.url_server) {
+            this.url_video = this.configuration.url_server + "/2.mp4";
+          }
+        } */
         // Datos
         if (this.configuration.main_block_news == true) {
           if (this.configuration.banner_text) {
