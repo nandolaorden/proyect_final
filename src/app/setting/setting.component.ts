@@ -14,7 +14,7 @@ export class SettingComponent implements OnInit {
   form: FormGroup;
   show: boolean = false;
   configuration: any;
-  image: any;
+  vision_news: string = "rss";
 
   ngOnInit() {
     this.initForm();
@@ -30,9 +30,12 @@ export class SettingComponent implements OnInit {
     }
   }
 
+  changeOption(select) {
+    this.vision_news = select;
+  }
+
   initForm() {
     this.form = new FormGroup({
-      image: new FormControl(null, [Validators.required]),
       information: new FormControl("superior", [Validators.required]),
       meteorology: new FormControl("izquierdo", [Validators.required]),
       video: new FormControl(false, [Validators.required]),
@@ -50,18 +53,15 @@ export class SettingComponent implements OnInit {
       text_alert: new FormControl({ value: null, disabled: true }, [
         Validators.required,
       ]),
+      select: new FormControl("rss", [Validators.required]),
     });
   }
 
-  // Metodo para obtener todos los productos
+  // Metodo para obtener la configuracion
   getConfiguration() {
     this.settingService.getSetting().subscribe(
       (setting: any) => {
         this.fillForm(setting);
-
-        if (setting.setting.image != null) {
-          this.image = setting.setting.image;
-        }
       },
       (error) => {}
     );
@@ -82,6 +82,14 @@ export class SettingComponent implements OnInit {
   }
 
   setting() {
+    if (this.vision_news === "text") {
+      this.form.value.url_font = null;
+    }
+
+    if (this.vision_news === "rss") {
+      this.form.value.area_news = null;
+    }
+
     this.settingService.editSetting(this.form.value).subscribe(
       (data: any) => {
         Swal.fire({

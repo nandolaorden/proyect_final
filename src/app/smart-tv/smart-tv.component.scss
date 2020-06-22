@@ -5,6 +5,13 @@
 
 .height_block_central {
   min-height: 80vh;
+  max-height: 80vh;
+}
+
+.video {
+  min-width: 100%;
+  max-height: 80vh;
+  object-fit: fill;
 }
 
 .animation_information {
@@ -13,6 +20,21 @@
   animation-duration: 30s;
   animation-name: information;
   animation-iteration-count: infinite;
+}
+
+@keyframes information {
+  0% {
+    margin-left: 140%;
+  }
+  20% {
+    margin-left: 20%;
+  }
+  80% {
+    margin-left: 20%;
+  }
+  100% {
+    margin-left: -100%;
+  }
 }
 
 .animation_logo {
@@ -44,20 +66,5 @@
   100% {
     left: 10%;
     top: 10%;
-  }
-}
-
-@keyframes information {
-  0% {
-    margin-left: 140%;
-  }
-  20% {
-    margin-left: 20%;
-  }
-  80% {
-    margin-left: 20%;
-  }
-  100% {
-    margin-left: -100%;
   }
 }

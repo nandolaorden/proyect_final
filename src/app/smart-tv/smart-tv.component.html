@@ -34,15 +34,12 @@
       </div>
     </div>
     <div class="w-full min-h-full bg-white">
-      <div class="h-full" *ngIf="block_main == false">
-        <video autoplay loop controls muted>
-          <source
-            src="http://localhost:3000/video/video2.mp4"
-            type="video/mp4"
-          />
+      <div class="w-full h-full" *ngIf="block_main == true">
+        <video id="videoPlayer" autoplay muted class="video">
+          <source [src]="src_video" type="video/mp4" />
         </video>
       </div>
-      <div class="animation_logo" *ngIf="block_main == true">
+      <div class="animation_logo" *ngIf="!block_main">
         <img class="w-64" src="../../assets/logo.png" alt="" />
       </div>
     </div>

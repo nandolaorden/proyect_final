@@ -45,6 +45,7 @@ export class ProfileComponent implements OnInit {
   getUser() {
     this.userService.getUser().subscribe(
       (user: any) => {
+        console.log(user.user);
         this.user = user.user;
       },
       (error) => {

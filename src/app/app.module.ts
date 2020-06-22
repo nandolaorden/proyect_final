@@ -13,8 +13,8 @@ import { CalendarComponent } from "./calendar/calendar.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SmartTVComponent } from "./smart-tv/smart-tv.component";
 import { ClimaComponent } from "./smart-tv/clima/clima.component";
-import { DatePipe } from './pipes/date.pipe';
-import { DayPipe } from './pipes/day.pipe';
+import { DatePipe } from "./pipes/date.pipe";
+import { DayPipe } from "./pipes/day.pipe";
 
 @NgModule({
   declarations: [
